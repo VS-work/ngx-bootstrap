@@ -1,4 +1,5 @@
-var envUrl;
+// var envUrl = "ngx-bootstrap-latest.surge.sh";
+var envUrl = "https://valor-software.com/ngx-bootstrap/";
 
 const chromeOptions = {
   args: ['--headless', '--disable-gpu', '--no-sandbox']
@@ -9,9 +10,7 @@ if(process.env.GOOGLE_CHROME_BINARY) {
 }
 
 if(process.env.TRAVIS) {
-  envUrl = "ngx-bootstrap-latest.surge.sh"
-} else {
-  envUrl =  "https://valor-software.com/ngx-bootstrap/#/"
+  envUrl = "localhost:4400/#/"
 }
 
 exports.config = {

@@ -83,10 +83,26 @@ jobs:
 #    test e2e-bdd
     - stage: bdd-tests
       env: GOOGLE_CHROME_BINARY = /usr/bin/google-chrome-beta
-      before_script: google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-      script:
+      before_script:
+      - npm run build
+      - npm run link
+      - npm run build:dynamic
+      - node  ./demo/dist/server.js &
+      - sleep 15
       - webdriver-manager update --standalone
-      - protractor ./protractor.cucumber.js
+#      - npm run link
+#      - npm run build:dynamic
+#      - npm run demo.serve &
+#      - sleep 15
+#      - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:4400/#/ &
+#      - npm run pree2e
+      script: protractor ./protractor.cucumber.js
+#      - npm run build
+#      - npm run link
+#      - npm run lite-server &
+#      - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:4400/#/ &
+#      - webdriver-manager update --standalone
+#      - protractor ./protractor.cucumber.js
 #    check prod build
     - &build
       stage: build

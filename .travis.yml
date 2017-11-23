@@ -14,7 +14,7 @@ before_script:
       - npm run build:dynamic
       - node  ./demo/dist/server.js &
       - sleep 15
-      - webdriver-manager update --standalone
+#      - webdriver-manager update --standalone
 #      - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:3000/#/ &
 #      - npm run pree2e
 script:

@@ -17,4 +17,6 @@ before_script:
       - webdriver-manager update --standalone
 #      - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:3000/#/ &
 #      - npm run pree2e
-script: protractor ./protractor.cucumber.js
+script:
+      - webdriver-manager update --standalone
+      - protractor ./protractor.cucumber.js

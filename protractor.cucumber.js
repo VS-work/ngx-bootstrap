@@ -10,7 +10,7 @@ if(process.env.GOOGLE_CHROME_BINARY) {
 }
 
 if(process.env.TRAVIS) {
-  envUrl = "localhost:4400/#/"
+  envUrl = "localhost:3000/#/"
 }
 
 exports.config = {

@@ -6,7 +6,7 @@ env:
      - GOOGLE_CHROME_BINARY = /usr/bin/google-chrome-beta
 
 
-# test e2e-bdd:
+## test e2e-bdd:
 #stage: bdd-tests
 before_script:
       - npm run build
